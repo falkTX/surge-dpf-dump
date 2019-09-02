@@ -2,4 +2,4 @@
 
 configurationXmlStart:
     .globl configurationXmlStart
-    .incbin "../../resources/data/configuration.xml"
+    .incbin "../resources/data/configuration.xml"
