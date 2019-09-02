@@ -158,6 +158,9 @@ void CScalableBitmap::draw (CDrawContext* context, const CRect& rect, const CPoi
 
         CPoint ncoff = offset;
         CPoint no = invtf.transform(ncoff);
+
+        if (alpha==255)
+            alpha = 1.0f;
         
         scaledBitmaps[ bestFitScaleGroup ]->draw(context, nr, no, alpha);
     }

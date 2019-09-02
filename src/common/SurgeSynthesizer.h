@@ -25,7 +25,10 @@ using PluginLayer = Vst2PluginInstance;
 class HeadlessPluginLayerProxy;
 using PluginLayer = HeadlessPluginLayerProxy;
 #else
-class PluginLayer;
+namespace DISTRHO {
+class Plugin;
+}
+using PluginLayer = DISTRHO::Plugin;
 #endif
 
 struct timedata

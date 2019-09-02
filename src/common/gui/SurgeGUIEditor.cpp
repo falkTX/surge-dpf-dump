@@ -160,6 +160,7 @@ void SurgeGUIEditor::idle()
 #endif
    if (!synth)
       return;
+       super::idle();
    if (editor_open && frame && !synth->halt_engine)
    {
       if (aboutbox && (aboutbox->getValue() > 0.5f))

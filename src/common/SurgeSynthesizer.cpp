@@ -22,7 +22,7 @@
 #include "vstgui/plugin-bindings/plugguieditor.h"
 #elif TARGET_HEADLESS
 #include "HeadlessPluginLayerProxy.h"
-#else
+#elif TARGET_VST2
 #include "Vst2PluginInstance.h"
 
 #if LINUX
@@ -30,6 +30,9 @@
 #else
 #include "vstgui/plugin-bindings/aeffguieditor.h"
 #endif
+#else
+# warning TODO DPF
+// #include "DistrhoPlugin.hpp"
 #endif
 #include "CSurgeSlider.h"
 
@@ -656,7 +659,7 @@ void SurgeSynthesizer::updateDisplay()
 {
 #if PLUGGUI
 #else
-   getParent()->updateDisplay();
+//    getParent()->updateDisplay();
 #endif
 }
 
@@ -673,7 +676,7 @@ void SurgeSynthesizer::sendParameterAutomation(long index, float value)
       getParent()->setParameterAutomated(externalparam, value);
 #elif TARGET_HEADLESS || TARGET_APP
       // NO OP
-#else
+#elif TARGET_VST2
       getParent()->setParameterAutomated(externalparam, value);
 #endif
    }

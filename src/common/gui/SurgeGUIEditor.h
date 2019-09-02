@@ -22,7 +22,7 @@ typedef VSTGUI::AEffGUIEditor EditorType;
 #endif
 #else
 #include <vstgui/plugin-bindings/plugguieditor.h>
-typedef VSTGUI::PluginGUIEditor EditorType;
+typedef PluginGUIEditor EditorType;
 #endif
 
 #include "SurgeStorage.h"
